@@ -1,0 +1,41 @@
+body {
+    background: #e8ffff;
+    color: black;
+    font-size: 75%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+h1 {
+    color: #000000;
+}
+
+.my-flex-block {
+    padding: 20px;
+    margin: 10px;
+    min-width: 200px;
+}
+.my-flex-container {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.rotate-input {
+    width: 80px;
+    height: 30px;
+    font-size: medium;
+    border-radius: 2px;
+    margin: auto;
+    text-align: center;
+}
+
+.text-box {
+    border-radius: 10px;
+    min-height: 300px;
+    min-width: 500px;
+    max-height: 300px;
+    max-width: 500px;
+    text-align: start;
+}
