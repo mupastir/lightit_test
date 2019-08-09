@@ -1,3 +1,9 @@
+import csv
+import os
+
+from core.constants import CSV_FILEPATH
+
+
 class Cipher:
 
     def __init__(self, rot_index, mode, rough_text):
@@ -30,7 +36,25 @@ class Cipher:
             else:
                 result += chr((ord(char) + rot - 97) % 26 + 97)
                 self._add_to_frequency(char)
+        self._write_to_csv(result)
         return result
+
+    def _write_to_csv(self, result_text):
+        if os.path.isfile(CSV_FILEPATH):
+            csv_writer = csv.writer(open(CSV_FILEPATH, 'a'),
+                                    lineterminator='\n')
+
+        else:
+            csv_writer = csv.writer(open(CSV_FILEPATH, 'w'),
+                                    lineterminator='\n')
+            csv_writer.writerow(["MODE",
+                                 "ROTATION",
+                                 "ROUGH TEXT",
+                                 "RESULT TEXT"])
+        csv_writer.writerow([self._mode,
+                             self._rot_index,
+                             self._rough_text,
+                             result_text])
 
     def _add_to_frequency(self, char):
         if char in self._frequency_rough:

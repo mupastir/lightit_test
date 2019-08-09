@@ -7,3 +7,6 @@ APP_ENV_PROD = "prod"
 
 # USERS ADDRESS
 USERS_URL = 'http://localhost:6400/users/api/authentication'
+
+# CSV FILEPATH
+CSV_FILEPATH = 'cipher_data.csv'
