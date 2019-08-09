@@ -1,5 +1,3 @@
-from core.app import app
-
 class Cipher:
 
     def __init__(self, rot_index, mode, rough_text):
