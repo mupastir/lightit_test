@@ -5,17 +5,20 @@
     <title>Cesar Cipher</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Chart.css')}}">
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Chart.js') }}"></script>
 </head>
 <body>
     <h1>{{ legend | safe}}</h1>
 
     <hr />
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-    <div class="rotate-input">
+    <form action="/cipher" method="post" name="main">
+        <div class="rotate-input">
         <p>SET ROTATION</p>
         <input class="rotate-input" type="number" name="rot-index" size="25" min="0" max="26">
     </div>
-
 
     <div class="my-flex-container" style="justify-content: center;">
         <div class="my-flex-block">
@@ -23,17 +26,19 @@
         </div>
         <div class="my-flex-block">
             <p> Please, select mode of the program: <br>
-                <input type="radio" name="case" value="code" checked="checked"> Code
-                <input type="radio" name="case" value="decode" > Decode
+                <input type="radio" name="mode" value="encrypt" checked="checked"> Encrypt
+                <input type="radio" name="mode" value="decrypt" > Decrypt
             </p>
+            <br>
+            <input class="start-btn" type="button" name="start" value="START" onclick="cipher();">
         </div>
         <div class="my-flex-block">
-            <textarea class="text-box" name="processed-text" readonly></textarea>
+            <textarea class="text-box" id="result" name="processed-text" readonly></textarea>
         </div>
     </div>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </form>
+    <div class="plot">
+        <canvas id="Diagram" width="5" height="1"></canvas>
+    </div>
 </body>
-    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Chart.js') }}"></script>
 </html>

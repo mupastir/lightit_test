@@ -5,7 +5,7 @@ from core.config import runtime_config
 import sqlite3
 import os
 
-from core.routes.cipher import Cipher
+from core.routes.cipher import CipherRoute
 
 
 DATABASE = os.environ.get('DATABASE', '/core/models/database.db')
@@ -30,4 +30,9 @@ def close_connection(exception):
 
 @app.route('/')
 def index():
-    return Cipher().main_page()
+    return CipherRoute().main_page()
+
+
+@app.route('/cipher', methods=['POST'])
+def cipher():
+    return CipherRoute().cipher()
