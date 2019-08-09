@@ -5,8 +5,10 @@ from core.controllers.cipher import Cipher
 class CipherRoute:
 
     def __init__(self):
-        self.main_page_legend = 'Cesar cipher site. Please choose rotation and case: encrypt or decrypt <br>' \
-                                'After that enter text in the left field'
+        self.main_page_legend = \
+            'Cesar cipher site. Please choose rotation and case: ' \
+            'encrypt or decrypt <br>' \
+            'After that enter text in the left field'
 
     def main_page(self):
         return render_template("index.html", legend=self.main_page_legend)
