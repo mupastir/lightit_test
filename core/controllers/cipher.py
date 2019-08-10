@@ -11,16 +11,18 @@ class Cipher:
         self._rot_index = int(rot_index)
         self._mode = mode
         self._rough_text = rough_text
-        self._modes = {
-            'encrypt': self._decrypt(-self._rot_index),
-            'decrypt': self._decrypt(self._rot_index)
-        }
 
     def get_result(self):
-        return {'result': self._modes[self._mode],
+        result = self._encrypt() if self._mode == 'encrypt' \
+            else self._decrypt()
+        return {'result': result,
                 'frequency_rough': self._frequency_rough}
 
-    def _decrypt(self, rot):
+    def _decrypt(self):
+        self._rot_index = -self._rot_index
+        return self._encrypt()
+
+    def _encrypt(self):
         result = ""
         for i in range(len(self._rough_text)):
             char = self._rough_text[i]
@@ -30,11 +32,11 @@ class Cipher:
                 result = result + char
             # Encrypt uppercase characters
             elif char.isupper():
-                result += chr((ord(char) + rot - 65) % 26 + 65)
+                result += chr((ord(char) + self._rot_index - 65) % 26 + 65)
                 self._add_to_frequency(char.lower())
             # Encrypt lowercase characters
             else:
-                result += chr((ord(char) + rot - 97) % 26 + 97)
+                result += chr((ord(char) + self._rot_index - 97) % 26 + 97)
                 self._add_to_frequency(char)
         self._write_to_csv(result)
         return result
