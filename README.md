@@ -2,13 +2,15 @@
 This site can cipher and decipher English text with selected rotation, also show histogram of frequency letters in incoming text.
 
 **Download and install**
-Download project to any directory and unzip it. After that recommended to create virtual environment in folder with project:
+Download project to any directory and unzip it. After that recommended to create virtual environment in folder with project. Execute in terminal next commands:
 
     python -m venv venv
 Also you need to install some libraries in pip:
 
     pip install flask flask-script
+**Run**
+To run site execute command:
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNDEyNjQ3XX0=
+eyJoaXN0b3J5IjpbMTM2NjgxOTQ3OF19
 -->
