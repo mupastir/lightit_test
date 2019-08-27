@@ -5,17 +5,18 @@ This site can cipher and decipher English text with selected rotation, also show
 - Download project to any directory and unzip it. 
 - After that recommended to create virtual environment in folder with project. Execute in terminal next commands:
 
-    `enter code here`
+    `python -m venv venv`
 
-- To activate 
-Also you need to install some libraries in pip:
+- Activate venv
+- Also you need to install some libraries in pip:
 
-    pip install flask flask-script
+    `pip install flask flask-script`
+    
 **Run**
-To run site execute command:
+To run site execute command in directory w:
 
-    python 
+    python manage.py runserver 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4MDgxOTM4XX0=
+eyJoaXN0b3J5IjpbMTQ4NzI0MDY1M119
 -->
