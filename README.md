@@ -18,7 +18,7 @@ To run site execute command in directory with project:
     python manage.py runserver 
 
 After that site will be available in browser by address as default:
-localhost:
+*localhost:5000*
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MDcyNTYxN119
+eyJoaXN0b3J5IjpbLTEzMjk5NTkxMTBdfQ==
 -->
