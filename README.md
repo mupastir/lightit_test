@@ -13,10 +13,12 @@ This site can cipher and decipher English text with selected rotation, also show
     `pip install flask flask-script`
     
 **Run**
-To run site execute command in directory w:
+To run site execute command in directory with project:
 
     python manage.py runserver 
 
+After that site will be available in browser by address as default:
+localhost:
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4NzI0MDY1M119
+eyJoaXN0b3J5IjpbMTc1MDcyNTYxN119
 -->
